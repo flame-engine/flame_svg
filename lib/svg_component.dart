@@ -57,4 +57,3 @@ class SvgComponent extends PositionComponent {
     return svg != null && svg.loaded() && x != null && y != null;
   }
 }
-

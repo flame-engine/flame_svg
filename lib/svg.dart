@@ -49,4 +49,3 @@ class Svg {
     return svgRoot != null;
   }
 }
- 

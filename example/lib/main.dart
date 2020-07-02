@@ -35,4 +35,3 @@ class MyGame extends BaseGame {
     svgInstance.renderPosition(canvas, Position(100, 200), 300, 300);
   }
 }
-
