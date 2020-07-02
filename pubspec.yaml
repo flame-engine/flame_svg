@@ -1,0 +1,20 @@
+name: flame_svg
+description: Package to add SVG rendering support for the Flame game engine
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flame: '>=0.23.0 <1.0.0'
+  flutter_svg: ^0.18.0
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
