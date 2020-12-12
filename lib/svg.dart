@@ -1,8 +1,8 @@
 import 'dart:ui';
+import 'package:flame/extensions/vector2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flame/flame.dart';
-import 'package:flame/position.dart';
 
 class Svg {
   DrawableRoot svgRoot;
@@ -14,38 +14,35 @@ class Svg {
     });
   }
 
-  /// Renders the svg on the [canvas] using the dimensions provided on [width] and [height]
+  /// Renders the svg on the [canvas] using the dimensions provided by [size]
   ///
   /// If not loaded, does nothing
-  void render(Canvas canvas, double width, double height) {
-    if (!loaded()) {
+  void render(Canvas canvas, Vector2 size) {
+    if (!loaded) {
       return;
     }
 
-    svgRoot.scaleCanvasToViewBox(canvas, Size(width, height));
+    svgRoot.scaleCanvasToViewBox(canvas, size.toSize());
     svgRoot.draw(canvas, null);
   }
 
-  /// Renders the svg on the [canvas] on the given [position] using the dimensions provided on [width] and [height]
+  /// Renders the svg on the [canvas] on the given [position] using the dimensions provided by [size]
   ///
   /// If not loaded, does nothing
   void renderPosition(
     Canvas canvas,
-    Position position,
-    double width,
-    double height,
+    Vector2 position,
+    Vector2 size,
   ) {
-    if (!loaded()) {
+    if (!loaded) {
       return;
     }
 
     canvas.save();
     canvas.translate(position.x, position.y);
-    render(canvas, width, height);
+    render(canvas, size);
     canvas.restore();
   }
 
-  bool loaded() {
-    return svgRoot != null;
-  }
+  bool get loaded => svgRoot != null;
 }
