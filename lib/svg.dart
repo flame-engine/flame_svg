@@ -7,10 +7,12 @@ import 'package:flame/flame.dart';
 class Svg {
   DrawableRoot svgRoot;
   Size size;
+  
+  Svg(this.svgRoot);
 
-  Svg(String fileName) {
-    Flame.assets.readFile(fileName).then((svgString) async {
-      svgRoot = await svg.fromSvgString(svgString, svgString);
+  static Future<Svg> load(String fileName) async {
+    return Flame.assets.readFile(fileName).then((svgString) async {
+      return Svg(await svg.fromSvgString(svgString, svgString));
     });
   }
 

@@ -70,7 +70,7 @@ packages:
       name: flame
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0-rc2"
+    version: "1.0.0-rc3"
   flame_svg:
     dependency: "direct main"
     description:
