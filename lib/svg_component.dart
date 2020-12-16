@@ -17,7 +17,4 @@ class SvgComponent extends PositionComponent {
     super.render(canvas);
     svg.render(canvas, size);
   }
-
-  @override
-  bool get loaded => svg != null && svg.loaded && x != null && y != null;
 }
