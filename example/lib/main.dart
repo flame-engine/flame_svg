@@ -24,13 +24,11 @@ class MyGame extends BaseGame {
 
   @override
   Future<void> onLoad() async {
-    svgInstance = await Svg.load('android.svg');
-
     final size = Vector2.all(100);
+    svgInstance = await loadSvg('android.svg');
     android = SvgComponent.fromSvg(size, svgInstance);
     android.x = 100;
     android.y = 100;
-
     add(android);
   }
 }
