@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'package:flame/assets/assets_cache.dart';
 import 'package:flame/extensions/vector2.dart';
+import 'package:flame/game/game.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flame/flame.dart';
@@ -7,11 +9,12 @@ import 'package:flame/flame.dart';
 class Svg {
   DrawableRoot svgRoot;
   Size size;
-  
+
   Svg(this.svgRoot);
 
-  static Future<Svg> load(String fileName) async {
-    final svgString = await Flame.assets.readFile(fileName);
+  static Future<Svg> load(String fileName, {AssetsCache cache}) async {
+    cache ??= Flame.assets;
+    final svgString = await cache.readFile(fileName);
     return Svg(await svg.fromSvgString(svgString, svgString));
   }
 
@@ -32,4 +35,8 @@ class Svg {
     render(canvas, size);
     canvas.restore();
   }
+}
+
+extension SvgLoader on Game {
+  Future<Svg> loadSvg(String fileName) => Svg.load(fileName, cache: assets);
 }
