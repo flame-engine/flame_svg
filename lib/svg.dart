@@ -11,9 +11,8 @@ class Svg {
   Svg(this.svgRoot);
 
   static Future<Svg> load(String fileName) async {
-    return Flame.assets.readFile(fileName).then((svgString) async {
-      return Svg(await svg.fromSvgString(svgString, svgString));
-    });
+    final svgString = await Flame.assets.readFile(fileName);
+    return Svg(await svg.fromSvgString(svgString, svgString));
   }
 
   /// Renders the svg on the [canvas] using the dimensions provided by [size]
