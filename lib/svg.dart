@@ -16,34 +16,20 @@ class Svg {
   }
 
   /// Renders the svg on the [canvas] using the dimensions provided by [size]
-  ///
-  /// If not loaded, does nothing
   void render(Canvas canvas, Vector2 size) {
-    if (!loaded) {
-      return;
-    }
-
     svgRoot.scaleCanvasToViewBox(canvas, size.toSize());
     svgRoot.draw(canvas, null);
   }
 
   /// Renders the svg on the [canvas] on the given [position] using the dimensions provided by [size]
-  ///
-  /// If not loaded, does nothing
   void renderPosition(
     Canvas canvas,
     Vector2 position,
     Vector2 size,
   ) {
-    if (!loaded) {
-      return;
-    }
-
     canvas.save();
     canvas.translate(position.x, position.y);
     render(canvas, size);
     canvas.restore();
   }
-
-  bool get loaded => svgRoot != null;
 }
