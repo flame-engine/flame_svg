@@ -5,7 +5,7 @@ homepage: https://github.com/flame-engine/flame_svg
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.18.0-6.0.pre <2.0.0"
+  flutter: ">=1.18.0-6.0.pre"
 
 dependencies:
   flame: ^1.0.0-rc7
