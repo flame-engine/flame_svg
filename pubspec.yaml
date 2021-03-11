@@ -1,6 +1,6 @@
 name: flame_svg
 description: Package to add SVG rendering support for the Flame game engine
-version: 1.0.0-rc1
+version: 1.0.0-rc2
 homepage: https://github.com/flame-engine/flame_svg
 
 environment:
