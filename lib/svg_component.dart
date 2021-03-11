@@ -1,5 +1,4 @@
-import 'package:flame/components/position_component.dart';
-import 'package:flame/extensions/vector2.dart';
+import 'package:flame/components.dart';
 
 import 'dart:ui';
 

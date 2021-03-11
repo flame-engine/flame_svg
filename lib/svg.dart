@@ -1,7 +1,8 @@
 import 'dart:ui';
-import 'package:flame/assets/assets_cache.dart';
-import 'package:flame/extensions/vector2.dart';
-import 'package:flame/game/game.dart';
+import 'package:flame/components.dart';
+import 'package:flame/game.dart';
+// ignore: implementation_imports
+import 'package:flame/src/assets/assets_cache.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flame/flame.dart';

@@ -1,4 +1,3 @@
-import 'package:flame/extensions/vector2.dart';
 import 'package:flame/game.dart';
 import 'package:flame_svg/flame_svg.dart';
 
