@@ -7,7 +7,8 @@ import './svg.dart';
 class SvgComponent extends PositionComponent {
   Svg svg;
 
-  SvgComponent.fromSvg(Vector2 size, this.svg) {
+  SvgComponent.fromSvg(Vector2 position, Vector2 size, this.svg) {
+    this.position.setFrom(position);
     this.size.setFrom(size);
   }
 
