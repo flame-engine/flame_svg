@@ -8,13 +8,12 @@ void main() {
 }
 
 class MyGame extends BaseGame {
-  Svg svgInstance;
-  SvgComponent android;
+  late Svg svgInstance;
 
   @override
   void render(Canvas canvas) {
     super.render(canvas);
-    svgInstance?.renderPosition(
+    svgInstance.renderPosition(
       canvas,
       Vector2(100, 200),
       Vector2.all(300),
@@ -23,11 +22,10 @@ class MyGame extends BaseGame {
 
   @override
   Future<void> onLoad() async {
-    final size = Vector2.all(100);
     svgInstance = await loadSvg('android.svg');
-    android = SvgComponent.fromSvg(size, svgInstance);
-    android.x = 100;
-    android.y = 100;
+    final size = Vector2.all(100);
+    final android = SvgComponent.fromSvg(size, svgInstance)
+      ..position = Vector2.all(100);
     add(android);
   }
 }

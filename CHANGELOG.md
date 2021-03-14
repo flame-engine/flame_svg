@@ -1,7 +1,8 @@
 # CHANGELOG
 
 ## [1.0.0-rc2]
- - Updated to use flame v1.0.0-rc7
+ - Updated to use flame v1.0.0-rc8
+ - Migrate to null-safety
  
 ## [1.0.0-rc1]
  - Updated to use flame v1.0.0
