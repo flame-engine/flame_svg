@@ -3,17 +3,17 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 // ignore: implementation_imports
 import 'package:flame/src/assets/assets_cache.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flame/flame.dart';
 
 class Svg {
   DrawableRoot svgRoot;
-  Size size;
 
   Svg(this.svgRoot);
 
-  static Future<Svg> load(String fileName, {AssetsCache cache}) async {
+  static Future<Svg> load(String fileName, {AssetsCache? cache}) async {
     cache ??= Flame.assets;
     final svgString = await cache.readFile(fileName);
     return Svg(await svg.fromSvgString(svgString, svgString));
@@ -22,7 +22,7 @@ class Svg {
   /// Renders the svg on the [canvas] using the dimensions provided by [size]
   void render(Canvas canvas, Vector2 size) {
     svgRoot.scaleCanvasToViewBox(canvas, size.toSize());
-    svgRoot.draw(canvas, null);
+    svgRoot.draw(canvas, svgRoot.viewport.viewBoxRect);
   }
 
   /// Renders the svg on the [canvas] on the given [position] using the dimensions provided by [size]
